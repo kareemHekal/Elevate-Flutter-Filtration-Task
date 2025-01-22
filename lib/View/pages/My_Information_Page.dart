@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../cards/call and whatsapp card.dart';
 import 'Show Items Page.dart';
 
@@ -24,17 +25,18 @@ class MyInformationPage extends StatelessWidget {
             ),
             Text(
               "Kareem Abd Elaziz Hekal",
-              style: TextStyle(
-                  color: Colors.blue[800],
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600),
+              style: GoogleFonts.reggaeOne(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+                color: Colors.white,
+              )
             ),
             const SizedBox(
               height: 8,
             ),
             Text(
               "kareemhekal19@gmail.com",
-              style: TextStyle(
+              style: GoogleFonts.reggaeOne(
                   color: Colors.blue[50],
                   fontSize: 15,
                   fontWeight: FontWeight.w400),
@@ -115,9 +117,9 @@ class MyInformationPage extends StatelessWidget {
                     elevation: 12, // Increase the elevation for a stronger 3D effect
                     padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32), // Add padding for better spacing
                   ),
-                  child: const Text(
+                  child:  Text(
                     "See My Task !",
-                    style: TextStyle(
+                    style: GoogleFonts.reggaeOne(
                       fontWeight: FontWeight.bold, // Make the text stand out more
                       fontSize: 16,
                     ),
