@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-
 import '../../bloc/items_state.dart';
 import '../cards/ItemWidget.dart';
 import '../loadingFiles/loadingWidget.dart';
@@ -32,7 +31,7 @@ class ShowItemsPage extends StatelessWidget {
           I T E M S''',
                 style: GoogleFonts.reggaeOne(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white, // Make the text stand out more
+                  color: Colors.white,
                   fontSize: 25,
                 ),
               ),
@@ -40,20 +39,21 @@ class ShowItemsPage extends StatelessWidget {
             body: BlocBuilder<ItemCubit, ItemState>(
               builder: (context, state) {
                 if (state is ItemLoading) {
-                  return Center(child:  DiscreteCircle(
-                    color:Colors.blue[400]??Colors.blue,
-                    size: 30,
-                    secondCircleColor: Colors.grey,
-                    thirdCircleColor: Colors.white,
-                  ),);
+                  return Center(
+                    child: DiscreteCircle(
+                      color: Colors.blue[400] ?? Colors.blue,
+                      size: 30,
+                      secondCircleColor: Colors.grey,
+                      thirdCircleColor: Colors.white,
+                    ),
+                  );
                 } else if (state is ItemLoaded) {
                   final items = state.items;
                   return GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       mainAxisExtent: 300,
-                      crossAxisCount: 2, // Two items per row
-                      // Space between rows
+                      crossAxisCount: 2,
                     ),
                     itemCount: items.length,
                     itemBuilder: (context, index) {

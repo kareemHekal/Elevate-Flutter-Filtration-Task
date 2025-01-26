@@ -1,4 +1,3 @@
-// item_state.dart
 import '../model/Items Respoce Model.dart';
 
 abstract class ItemState {}
